@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroShield - Controle de Pragas e Finanças</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header>
+        <h1>AgroShield</h1>
+        <p>Painel de Controle de Pragas e Gestão Financeira Rural</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>Resumo Financeiro da Safra</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody id="finance-table">
+                    <tr>
+                        <td>Venda da Safra de Milho</td>
+                        <td class="lucro">Lucro</td>
+                        <td>+ 45.000,00</td>
+                    </tr>
+                    <tr>
+                        <td>Compra de Defensivos (Lagarta)</td>
+                        <td class="gasto">Gasto</td>
+                        <td>- 3.200,00</td>
+                    </tr>
+                    <tr>
+                        <td>Mão de Obra de Aplicação</td>
+                        <td class="gasto">Gasto</td>
+                        <td>- 1.500,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="resumo-financeiro">
+                <strong>Balanço Atual: <span class="lucro" id="balanco-total">R$ 40.300,00</span></strong>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h2>Enciclopédia de Pragas & Soluções</h2>
+                
+                <div class="praga-item">
+                    <h3>Lagarta-do-Cartucho (Spodoptera frugiperda)</h3>
+                    <p><strong>Cultura afetada:</strong> Milho, Sorgo e Algodão.</p>
+                    <p><strong>Como conter:</strong> Monitoramento semanal. Uso de armadilhas e controle biológico ou químico no momento certo.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Produto Recomendado:</strong> <span class="produto-tag">Inseticida Biológico (Bacillus thuringiensis)</span></p>
+                </div>
+
+                <div class="praga-item item-laranja">
+                    <h3>Percevejo-Marrom (Euschistus heros)</h3>
+                    <p><strong>Cultura afetada:</strong> Soja.</p>
+                    <p><strong>Como conter:</strong> Amostragem com pano de batida. Controle químico ao atingir o nível de dano econômico.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Produto Recomendado:</strong> <span class="produto-tag">Defensivo Químico Registrado</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Registrar Novo Foco de Praga</h2>
+                <form id="praga-form">
+                    <div class="form-group">
+                        <label for="talhao">Identificação do Talhão/Terra:</label>
+                        <input type="text" id="talhao" placeholder="Ex: Talhão Norte 02" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="praga-tipo">Praga Identificada:</label>
+                        <select id="praga-tipo">
+                            <option value="Lagarta-do-Cartucho">Lagarta-do-Cartucho</option>
+                            <option value="Percevejo-Marrom">Percevejo-Marrom</option>
+                            <option value="Outra">Outra / Nova Praga</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gasto-estimado">Custo Estimado do Tratamento (R$):</label>
+                        <input type="number" id="gasto-estimado" placeholder="Ex: 1200" required>
+                    </div>
+                    <button type="submit">Gravar Alerta e Atualizar Caixa</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AgroShield - Tecnologia de apoio ao Produtor Rural.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
